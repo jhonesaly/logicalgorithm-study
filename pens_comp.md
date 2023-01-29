@@ -161,4 +161,41 @@ Problemas computacionais:
 - Busca
 - Otimização
 
-Programa fonte: alto nível
+Estrutura da operação:
+
+- Programa fonte: software escrito em linguagem de alto nível.
+- Compilador: executa análise do programa e transforma em um programa objeto.
+- Programa objeto: software escrito em linguagem de baixo nível, como assembly.
+
+Tipos de linguagem:
+
+- Tradução: processo de transformar um programa fonte em um programa objeto. (ex: C++)
+- Interpretação: processo de leitura direta do programa fonte. Faz a linguagem mais lenta, porém mais flexível. (ex: python, ruby, JavaScript)
+- Transpilação: processo de transformar um programa fonte em uma linguagem de alto nível para uma linguagem também de alto nível, porém menor. (ex: typescript)
+
+Diretrizes de desenvolvimento:
+
+- Legibilidade: facilidade de leitura e coerente.
+- Redigibilidade: facilidade de escrita e reuso.
+- Confiabilidade: faz o que foi programado para fazer.
+- Custo: análise de impacto de recursos.
+- Disponibilidade de ferramentas
+- Comunidade ativa
+- Adoção pelo mercado
+- Atualizações
+
+## Compilador
+
+Tipos de análise do compilador:
+
+- Lexical
+- Syntax
+- Semantic
+
+Estapas análise léxica:
+
+- Particionar: separar o código fontes em elementos relevantes, chamados tokens.
+- Classificar: identifica os tokens em palavras reservadas, funções, etc.
+- Eliminar: comentários, trechos em branco e outros elementos que são mais para a compreensão do desenvolvedor
+
+Análise sintática: componente do sistema linguístico que interligam os constituintes da sentença, atribuindo-lhe uma estrutura.
