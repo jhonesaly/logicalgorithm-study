@@ -104,7 +104,36 @@ Boas práticas:
 - nome tenha sentido prático (não utilizar incógnitas como "x", "y", "z")
 - não usar palavras reservadas
 
+
 ## Instruções
 
-Instruções primitivas...
+São linguagens de palavras-chave (vocabulário) de uma determinada linguagem de programação que tem por finalidade comandar um computador que irá tratar os dados.
 
+Operadores primitivos:
+
+- binário: + - / * ** %
+- unário: + e - (sinal de um número, não operação)
+
+Estruturas condicionais:
+
+- igual ==
+- diferente !=
+- maior >
+- menor <
+- lógicos:
+    - e
+    - ou 
+    - not
+
+Estruturas de repetição:
+
+- while
+- for
+
+Funções: 
+
+## Estrutura da dados
+
+vetores: caracterizado por uma variável dimensionada com tamanho pré-fixado
+
+matriz: é uma tabela organizada em linhas e colunas no formato m x n, onde m representa o número de linha e n o de colunas.
