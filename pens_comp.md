@@ -36,5 +36,31 @@ Processo:
 - Funções bem definidas
 
 ------
+## Decomposição
+
+Primeiro passo da resolução de problemas dentro do conceito de pensamento computacional
+
+Passos:
+
+- Análise: processo de quebrar e determinar partes menores e gerenciáveis
+- Síntese: Combinar os elementos recompondo o problema original
+- Estratégia: Ordem de execução de tarefas menores
+    - Sequencial
+    - Paralelo
+
+## Padrões
+
+Modelo que possui uma estrutura que é repetida. Isso possibilita a generalização
+
+Reconhecimento:
+
+- Similaridades
+- Diferenças
+
+## Abstração
+
+Observar, um ou mais elementos, analisando suas características separadamente da realidade, tornando-as mais gerais e amplas.
+
+## Algoritmos
 
 
