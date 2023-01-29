@@ -198,4 +198,30 @@ Estapas análise léxica:
 - Classificar: identifica os tokens em palavras reservadas, funções, etc.
 - Eliminar: comentários, trechos em branco e outros elementos que são mais para a compreensão do desenvolvedor
 
-Análise sintática: componente do sistema linguístico que interligam os constituintes da sentença, atribuindo-lhe uma estrutura.
+Análise sintática: componente do sistema linguístico que interligam os constituintes da sentença, atribuindo-lhe uma estrutura, conferindo a correção do programa.
+
+Análise semântica: é o estudo do significado. Incide sobre a relação entre significantes, como: palavras, frases, sinais e símbolos. Verifica a lógica do programa.
+
+## Paradigmas de programação
+
+Forma de resolução de problemas com diretrizes e limitações específicas utilizando linguagem de programação
+
+**Estruturado**: estrutura de blocos aninhados, com ênfase na sequência para atacar diretamente problemas. (C++, C, JavaScript, Java)
+
+**Orientação à objetos**: tenta reproduzir o mundo real, representando objetos e suas interações, facilitando o reuso de código (Python, lua, C++, Java)
+
+> objeto: descrito por características específicas (Atributos), comportamentos (Métodos) e circunstâncias (Estados)
+
+Pilares da orientação à objeto:
+
+- Herança: classe filha recebe as características da classe mãe (mais geral)
+- Encapsulamento: 
+- Polimorfismo: 
+- Abstração: 
+
+Outros paradigmas:
+
+- Computação distribuída: funções executadas de forma independente. (Ada)
+- Lógico
+- Procedural: chamada sucessiva e procedimentos separados. (Fortran, lua)
+- Funcional: instruções são baseadas em funções (lua, JavaScript, Java, Python)
