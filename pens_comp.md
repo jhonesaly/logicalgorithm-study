@@ -63,4 +63,20 @@ Observar, um ou mais elementos, analisando suas características separadamente d
 
 ## Algoritmos
 
+Processo de resolução de problemas "step by step". Necessário para que o computador possa ser utilizado.
+
+----
+# Lógica de Programação
+
+Problema: é uma questão que foge a uma determinada regra ou um desvio de percurso, o qual impede de atingir um objetivo com eficiência e eficácia.
+
+Lógica: parte da filosofia que trata das formas do pensamento em geral e das operações intelectuais que visam à determinação do que é verdadeiro ou não.
+
+Lógica de programação: organização e planejamento das instruções assertivas em um algoritmo, a fim de viabilizar a implementação de um programa.
+
+Técnicas:
+
+- Linear: execução sequenciada de uma série de operações, com recursos limitados e uma única dimensão.
+- Estruturada: organização, disposição e ordem dos elementos essenciais que compõem um corpo. A diferença é que determinadas estruturas possuem mais de uma possibilidade (seria o "if else")
+- Modular: partes independentes que são controladas por um conjunto de regras específicas.
 
