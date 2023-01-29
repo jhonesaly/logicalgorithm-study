@@ -35,7 +35,6 @@ Processo:
 - Simplificar linhas de códigos
 - Funções bem definidas
 
-------
 ## Decomposição
 
 Primeiro passo da resolução de problemas dentro do conceito de pensamento computacional
@@ -130,10 +129,36 @@ Estruturas de repetição:
 - while
 - for
 
-Funções: 
+## Funções 
+
+são blocos de instruções que realizam tarefas específicas, identificados por nomes e parâmetros
+
+elementos de função:
+
+- Definição
+- Nome
+- Invocação
+- Variável local 
 
 ## Estrutura da dados
 
 vetores: caracterizado por uma variável dimensionada com tamanho pré-fixado
 
 matriz: é uma tabela organizada em linhas e colunas no formato m x n, onde m representa o número de linha e n o de colunas.
+
+------
+# Linguagens de programação
+
+Linguagem de programação: método padronizado composto por um conjunto de regras sintáticas e semânticas de implementação de um código fonte.
+
+Primeira linguagem: Assembly (linguagem de máquina)
+
+Paradigmas
+
+Problemas computacionais:
+
+- Decisão
+- Busca
+- Otimização
+
+Programa fonte: alto nível
