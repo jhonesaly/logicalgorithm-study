@@ -80,3 +80,31 @@ Técnicas:
 - Estruturada: organização, disposição e ordem dos elementos essenciais que compõem um corpo. A diferença é que determinadas estruturas possuem mais de uma possibilidade (seria o "if else")
 - Modular: partes independentes que são controladas por um conjunto de regras específicas.
 
+----
+# Algoritmos
+
+## Variáveis
+
+Pode assumir qualquer um dos valores de um determinado conjunto de valores.
+
+Tipos:
+
+- Numéricos (int e float)
+- Caracteres (string)
+- Lógicos (bool)
+
+Papéis:
+
+- Ação: Modifica estado do programa
+- Controle: informa que algo mudou ou problema
+- Constante: não é alterada (pi)
+
+Boas práticas:
+
+- nome tenha sentido prático (não utilizar incógnitas como "x", "y", "z")
+- não usar palavras reservadas
+
+## Instruções
+
+Instruções primitivas...
+
