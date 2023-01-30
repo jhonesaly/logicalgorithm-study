@@ -14,10 +14,10 @@ import random
 # criando variáveis estáticas
 
 list_bs = []
-list_range = 10
+list_size = 10
 lim_inf = 0
 lim_sup = 99
-list_size = 100
+list_range = 100
 
 # Criando funções
 
@@ -31,39 +31,52 @@ def calc_mid_index(lim_inf, lim_sup):
 #     num = random.randint(lim_inf, lim_sup)
 #     list.append(num)
 
-list_bs = random.sample(range(list_size), list_range)
+list_bs = random.sample(range(list_range), list_size)
 list_bs.sort()
 
 # Iniciando programa
 
 os.system('cls')
 
-hi_index = list_range-1
+hi_index = list_size-1
 low_index = 0
 mid_index = calc_mid_index(low_index, hi_index)
 
-search = input('Digite o número a ser procurado: ')
-
 num_mid_index = list_bs[mid_index]
 
-print (list_bs)
-print (list_bs[mid_index])
+exit = False
 
-if search > list_bs[0] and search < list_bs[list_size]:
-    print('O número está na lista!')
+while exit != True:
 
-    if search == num_mid_index:
+    print(f'a lista é: {list_bs}')
+    
+    search = input('Digite o número a ser procurado: ')
+
+    if search == 'exit':
+        exit = True
+        break
+
+    else:
+        search = int(search)
+    
+    if search > list_bs[0] and search < list_bs[list_size-1]:
         
-        print(f'Sua posição é: {list_bs.index(search)}')
+        while num_mid_index != search:
+        
+            if search == num_mid_index:
+                print(f'A posição do número é: {list_bs.index(search)}')
 
-    elif search > num_mid_index:
-        low_index = mid_index
-        mid_index = calc_mid_index(low_index, hi_index)
+            elif search > num_mid_index:
+                low_index = mid_index
+                mid_index = calc_mid_index(low_index, hi_index)
+                num_mid_index = list_bs[mid_index]
 
-    elif search < num_mid_index:
-        hi_index = mid_index
-        mid_index = calc_mid_index(low_index, hi_index)
+            elif search < num_mid_index:
+                hi_index = mid_index
+                mid_index = calc_mid_index(low_index, hi_index)
+                num_mid_index = list_bs[mid_index]
 
-else:
-    print('O número não está na lista!')
+    else:
+        os.system('cls')
+        print('O número procurado não está na lista!')
 
