@@ -25,6 +25,14 @@ def calc_mid_index(lim_inf, lim_sup):
     mid_index = int((lim_inf + lim_sup)/2)
     return mid_index
 
+# def default(list_bs):
+#     list_size = len(list_bs)
+#     hi_index = list_size-1
+#     low_index = 0
+#     mid_index = calc_mid_index(low_index, hi_index)
+#     num_mid_index = list_bs[mid_index]
+#     return hi_index, low_index, mid_index, num_mid_index
+
 # Criando "array" de dados
 
 # for i in range(listrange):
@@ -34,22 +42,24 @@ def calc_mid_index(lim_inf, lim_sup):
 list_bs = random.sample(range(list_range), list_size)
 list_bs.sort()
 
+list_bs = [0, 1, 34, 38, 50, 69, 81, 82, 87, 94]
+
 # Iniciando programa
 
 os.system('cls')
-
-hi_index = list_size-1
-low_index = 0
-mid_index = calc_mid_index(low_index, hi_index)
-
-num_mid_index = list_bs[mid_index]
 
 exit = False
 
 while exit != True:
 
     print(f'a lista é: {list_bs}')
+    #default(list_bs)
     
+    hi_index = list_size-1
+    low_index = 0
+    mid_index = calc_mid_index(low_index, hi_index)
+    num_mid_index = list_bs[mid_index]
+
     search = input('Digite o número a ser procurado: ')
 
     if search == 'exit':
@@ -59,12 +69,12 @@ while exit != True:
     else:
         search = int(search)
     
-    if search > list_bs[0] and search < list_bs[list_size-1]:
+    if search >= list_bs[0] and search <= list_bs[list_size-1]:
         
-        while num_mid_index != search:
+        while low_index != hi_index:
         
             if search == num_mid_index:
-                print(f'A posição do número é: {list_bs.index(search)}')
+                break
 
             elif search > num_mid_index:
                 low_index = mid_index
@@ -75,6 +85,15 @@ while exit != True:
                 hi_index = mid_index
                 mid_index = calc_mid_index(low_index, hi_index)
                 num_mid_index = list_bs[mid_index]
+
+        if search == num_mid_index:
+            os.system('cls')
+            print('O número está na lista!')
+            print(f'O index do número é: {list_bs.index(search)}')
+        
+        else:
+            os.system('cls')
+            print('O número procurado não está na lista!')
 
     else:
         os.system('cls')
