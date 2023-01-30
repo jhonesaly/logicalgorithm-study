@@ -192,7 +192,7 @@ Tipos de análise do compilador:
 - Syntax
 - Semantic
 
-Estapas análise léxica:
+Etapas análise léxica:
 
 - Particionar: separar o código fontes em elementos relevantes, chamados tokens.
 - Classificar: identifica os tokens em palavras reservadas, funções, etc.

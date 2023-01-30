@@ -13,11 +13,17 @@ import random
 
 # criando variáveis estáticas
 
-list = []
+list_bs = []
 list_range = 10
 lim_inf = 0
 lim_sup = 99
 list_size = 100
+
+# Criando funções
+
+def calc_mid_index(lim_inf, lim_sup):
+    mid_index = int((lim_inf + lim_sup)/2)
+    return mid_index
 
 # Criando "array" de dados
 
@@ -25,50 +31,39 @@ list_size = 100
 #     num = random.randint(lim_inf, lim_sup)
 #     list.append(num)
 
-list = random.sample(range(list_size), list_range)
-list.sort()
+list_bs = random.sample(range(list_size), list_range)
+list_bs.sort()
 
 # Iniciando programa
 
 os.system('cls')
 
-while exit != True:
+hi_index = list_range-1
+low_index = 0
+mid_index = calc_mid_index(low_index, hi_index)
 
-    outputx = -1 
+search = input('Digite o número a ser procurado: ')
 
-    # Entrada de dados:
+num_mid_index = list_bs[mid_index]
 
-    inputx = input('Digite "exit" para sair ou o número a ser buscado: ')
+print (list_bs)
+print (list_bs[mid_index])
 
-    # Tratamento dos dados:
+if search > list_bs[0] and search < list_bs[list_size]:
+    print('O número está na lista!')
 
-    if inputx.isnumeric():
-        try:
-            inputx = int(inputx)
-        except:
-            os.system('cls')
-            print('digite um número inteiro')
-
-    elif inputx == 'exit':
-        os.system('cls')
-        print('até a próxima!')
-        exit = True
-        break
-
-    # Operação dos dados:
-
-    for num in list:
+    if search == num_mid_index:
         
-        if num == inputx:
-            os.system('cls')
-            outputx = list.index(inputx)          
+        print(f'Sua posição é: {list_bs.index(search)}')
 
-    # Saída dos dados: 
+    elif search > num_mid_index:
+        low_index = mid_index
+        mid_index = calc_mid_index(low_index, hi_index)
 
-    if outputx != -1:
-        os.system('cls')
-        print(f'o número faz parte da lista! Sua posição na memória é {outputx}')
-    
-    else:
-        os.system('cls')
-        print('o número não faz parte da lista!')
+    elif search < num_mid_index:
+        hi_index = mid_index
+        mid_index = calc_mid_index(low_index, hi_index)
+
+else:
+    print('O número não está na lista!')
+
