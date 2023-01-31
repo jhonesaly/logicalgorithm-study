@@ -11,51 +11,45 @@
 import os
 import random
 
-# criando variáveis estáticas
-
-list_bs = []
-list_size = 10
-
-index_inf = 0
-index_sup = 9
-
-lim_inf = 0
-lim_sup = 99
-list_range = 100
-
 # Criando funções
 
+## Criando lista de dados
+
+def gen_rand_list(list_range, lim_sup, lim_inf=0):
+    # modo alternativo: list = random.sample(range(list_range), list_size)    
+    
+    list = []
+    for num in range(list_range):
+        num = random.randint(lim_inf, lim_sup)
+        list.append(num)
+    list.sort()
+    return list
+
+## Calculando o index do meio
+ 
 def calc_mid_index(index_inf, index_sup):
     mid_index = int((index_inf + index_sup)/2)
     return mid_index
 
-def gen_rand_list(list_range, lim_sup, lim_inf=0):
-    return
+## Definindo variáveis de busca
+
+def default(list):
+    global list_size, index_sup, index_inf, mid_index
+    list_size = len(list)
+    index_sup = list_size-1
+    index_inf = 0
+    mid_index = calc_mid_index(index_inf, index_sup)
+    return 
 
 
-# def default(list_bs):
-#     list_size = len(list_bs)
-#     hi_index = list_size-1
-#     low_index = 0
-#     mid_index = calc_mid_index(low_index, hi_index)
-#     num_mid_index = list_bs[mid_index]
-#     return hi_index, low_index, mid_index, num_mid_index
+# Criando dados:
 
-# Criando "array" de dados
-
-# for i in range(listrange):
-#     num = random.randint(lim_inf, lim_sup)
-#     list.append(num)
-
-list_bs = random.sample(range(list_range), list_size)
-list_bs.sort()
-
-list_bs = [0, 1, 34, 38, 50, 69, 81, 82, 87, 94]
+list_bs = gen_rand_list(10, 99)
+default(list_bs)
 
 # Iniciando programa
 
 os.system('cls')
-
 exit = False
 
 while exit != True:
