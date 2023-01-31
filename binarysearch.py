@@ -34,11 +34,11 @@ def calc_mid_index(index_inf, index_sup):
 ## Definindo variáveis de busca
 
 def default(list):
-    global list_size, index_sup, index_inf, mid_index
+    global list_size, index_sup, index_inf, index_mid
     list_size = len(list)
     index_sup = list_size-1
     index_inf = 0
-    mid_index = calc_mid_index(index_inf, index_sup)
+    index_mid = calc_mid_index(index_inf, index_sup)
     return 
 
 
@@ -55,12 +55,7 @@ exit = False
 while exit != True:
 
     print(f'a lista é: {list_bs}')
-    #default(list_bs)
-    
-    hi_index = list_size-1
-    low_index = 0
-    mid_index = calc_mid_index(low_index, hi_index)
-    num_mid_index = list_bs[mid_index]
+    default(list_bs)
 
     search = input('Digite o número a ser procurado: ')
 
@@ -73,26 +68,36 @@ while exit != True:
     
     if search >= list_bs[0] and search <= list_bs[list_size-1]:
         
-        while low_index != hi_index:
+        while (index_sup - index_inf) > 1:
         
-            if search == num_mid_index:
+            if search == num_index_mid:
                 break
 
-            elif search > num_mid_index:
-                low_index = mid_index
-                mid_index = calc_mid_index(low_index, hi_index)
-                num_mid_index = list_bs[mid_index]
+            elif search > num_index_mid:
+                index_inf = index_mid
+                index_mid = calc_mid_index(index_inf, index_sup)
+                num_index_mid = list_bs[index_mid]
 
-            elif search < num_mid_index:
-                hi_index = mid_index
-                mid_index = calc_mid_index(low_index, hi_index)
-                num_mid_index = list_bs[mid_index]
+            elif search < num_index_mid:
+                index_sup = index_mid
+                index_mid = calc_mid_index(index_inf, index_sup)
+                num_index_mid = list_bs[index_mid]
 
-        if search == num_mid_index:
+        if search == num_index_mid:
             os.system('cls')
             print('O número está na lista!')
-            print(f'O index do número é: {list_bs.index(search)}')
+            print(f'O index do número é: {index_mid}')
         
+        elif search == list_bs[index_inf]:
+            os.system('cls')
+            print('O número está na lista!')
+            print(f'O index do número é: {index_inf}')
+
+        elif search == list_bs[index_sup]:
+            os.system('cls')
+            print('O número está na lista!')
+            print(f'O index do número é: {index_sup}') 
+
         else:
             os.system('cls')
             print('O número procurado não está na lista!')
@@ -100,6 +105,3 @@ while exit != True:
     else:
         os.system('cls')
         print('O número procurado não está na lista!')
-
-
-
