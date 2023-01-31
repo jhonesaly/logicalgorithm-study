@@ -9,38 +9,7 @@
 # 7 Repeat steps 3-6 until the element is found or it is clear that the element is not present in the array.
 
 import os
-import random
-
-# Criando funções
-
-## Criando lista de dados
-
-def gen_rand_list(list_range, lim_sup, lim_inf=0):
-    # modo alternativo: list = random.sample(range(list_range), list_size)    
-    
-    list = []
-    for num in range(list_range):
-        num = random.randint(lim_inf, lim_sup)
-        list.append(num)
-    list.sort()
-    return list
-
-## Calculando o index do meio
- 
-def calc_mid_index(index_inf, index_sup):
-    mid_index = int((index_inf + index_sup)/2)
-    return mid_index
-
-## Definindo variáveis de busca
-
-def default(list):
-    global list_size, index_sup, index_inf, index_mid
-    list_size = len(list)
-    index_sup = list_size-1
-    index_inf = 0
-    index_mid = calc_mid_index(index_inf, index_sup)
-    return 
-
+from modules.search import *
 
 # Criando dados:
 
@@ -66,41 +35,28 @@ while exit != True:
     else:
         search = int(search)
     
-    if search >= list_bs[0] and search <= list_bs[list_size-1]:
-        
-        while (index_sup - index_inf) > 1:
-        
-            if search == num_index_mid:
-                break
+            
+    while (index_sup - index_inf) > 1:
+    
+        if search == list_bs[index_mid]:
+            break
 
-            elif search > num_index_mid:
-                index_inf = index_mid
-                index_mid = calc_mid_index(index_inf, index_sup)
-                num_index_mid = list_bs[index_mid]
+        elif search > list_bs[index_mid]:
+            index_inf = index_mid
+            index_mid = calc_mid_index(index_inf, index_sup)
+            
+        elif search < list_bs[index_mid]:
+            index_sup = index_mid
+            index_mid = calc_mid_index(index_inf, index_sup)
+            
+    if search == list_bs[index_mid]:
+        found(index_mid)
+    
+    elif search == list_bs[index_inf]:
+        found(index_inf)
 
-            elif search < num_index_mid:
-                index_sup = index_mid
-                index_mid = calc_mid_index(index_inf, index_sup)
-                num_index_mid = list_bs[index_mid]
-
-        if search == num_index_mid:
-            os.system('cls')
-            print('O número está na lista!')
-            print(f'O index do número é: {index_mid}')
-        
-        elif search == list_bs[index_inf]:
-            os.system('cls')
-            print('O número está na lista!')
-            print(f'O index do número é: {index_inf}')
-
-        elif search == list_bs[index_sup]:
-            os.system('cls')
-            print('O número está na lista!')
-            print(f'O index do número é: {index_sup}') 
-
-        else:
-            os.system('cls')
-            print('O número procurado não está na lista!')
+    elif search == list_bs[index_sup]:
+        found(index_sup)
 
     else:
         os.system('cls')
