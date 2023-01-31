@@ -15,15 +15,23 @@ import random
 
 list_bs = []
 list_size = 10
+
+index_inf = 0
+index_sup = 9
+
 lim_inf = 0
 lim_sup = 99
 list_range = 100
 
 # Criando funções
 
-def calc_mid_index(lim_inf, lim_sup):
-    mid_index = int((lim_inf + lim_sup)/2)
+def calc_mid_index(index_inf, index_sup):
+    mid_index = int((index_inf + index_sup)/2)
     return mid_index
+
+def gen_rand_list(list_range, lim_sup, lim_inf=0):
+    return
+
 
 # def default(list_bs):
 #     list_size = len(list_bs)
@@ -98,4 +106,6 @@ while exit != True:
     else:
         os.system('cls')
         print('O número procurado não está na lista!')
+
+
 
