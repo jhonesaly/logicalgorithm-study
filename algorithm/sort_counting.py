@@ -6,15 +6,31 @@
 
 
 import os
-from modules.search import *
+import random
+
+# Criando funções
+
+## Criando lista de dados
+
+def gen_rand_list(list_range, lim_sup, lim_inf=0):
+    # modo alternativo: list = random.sample(range(list_range), list_size)    
+    
+    list = []
+    for num in range(list_range):
+        num = random.randint(lim_inf, lim_sup)
+        list.append(num)
+    return list
+
 
 os.system('cls')
 
-# problem_input = [1, 4, 1, 2, 7, 5, 2]
+# Criando o input: 
 
 problem_input = gen_rand_list(10, 99)
 
-# Criando chave 
+print(f'\n entradas: {problem_input}\n')
+
+# Criando chave:
 
 key_index = list(range(min(problem_input),max(problem_input)+1))
 key_zeros = list(0 for i in range(len(key_index)))
@@ -24,17 +40,17 @@ for i1 in range(len(problem_input)):
         if key_index[i2] == problem_input[i1]:
             key_zeros[i2] += 1
 
+print(f'\n chaves: {key_index}\n')
+print(f'\n fechadura: {key_zeros}\n')
+
 problem_output = []
 
-for i in range(len(problem_input)):
-    
+for i in range(len(key_zeros)):
     while key_zeros[i] != 0:
         problem_output.append(key_index[i])
         key_zeros[i] -= 1
+            
 
-print(f'\n entradas: {problem_input}\n')
-print(f'\n chaves: {key_index}\n')
-print(f'\n fechadura: {key_zeros}\n')
 print(f'\n saídas: {problem_output}\n')
 
 answer = sorted(problem_input)
