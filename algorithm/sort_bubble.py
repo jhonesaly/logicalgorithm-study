@@ -21,7 +21,6 @@ problem_input = gen_rand_list(20, 99)
 
 list_raw = problem_input
 
-
 for x in range(len(list_raw)):    
     print(f'*****\nentrando no ciclo {x+1}')
     for i in range(len(list_raw)-1):

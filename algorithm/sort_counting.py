@@ -4,7 +4,15 @@
 # It works by counting the number of objects having distinct key values (a kind of hashing). 
 # Then do some arithmetic operations to calculate the position of each object in the output sequence. 
 
-problem_input = [1, 4, 1, 2, 7, 5, 2]
+
+import os
+from modules.search import *
+
+os.system('cls')
+
+# problem_input = [1, 4, 1, 2, 7, 5, 2]
+
+problem_input = gen_rand_list(10, 99)
 
 # Criando chave 
 
@@ -16,20 +24,23 @@ for i1 in range(len(problem_input)):
         if key_index[i2] == problem_input[i1]:
             key_zeros[i2] += 1
 
-problem_output = [0 for i in range(len(problem_input))]
+problem_output = []
 
-for i1 in range (len(problem_output)):
+for i in range(len(problem_input)):
     
-    if key_zeros[i1] != 0:
-        problem_output[i1] = key_index[i1]
-        key_zeros[i1] -= 1
+    while key_zeros[i] != 0:
+        problem_output.append(key_index[i])
+        key_zeros[i] -= 1
 
-# print(key_index)
-print(key_zeros)
-print(problem_output)
-
+print(f'\n entradas: {problem_input}\n')
+print(f'\n chaves: {key_index}\n')
+print(f'\n fechadura: {key_zeros}\n')
+print(f'\n saídas: {problem_output}\n')
 
 answer = sorted(problem_input)
+
+print(f'\n resposta: {answer}\n')
+
 # print(answer)
 
 # Teste
