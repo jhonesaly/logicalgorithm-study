@@ -7,31 +7,28 @@ os.system('cls')
 
 problem_input = gen_rand_list(5, 99)
 
-print(f'\n entradas: {problem_input}\n')
+print(f'\nentradas: {problem_input}\n')
 
 ###
 
-problem_output = problem_input[:3]
+problem_output = [0,0,0]
 
 for i in problem_input:
     minimal = min(problem_output)
+    idx = problem_output.index(minimal)
     if i > minimal:
-        problem_output[minimal] = i
+        problem_output[idx] = i
 
-#for i in problem_input:
+problem_output = set(problem_output)
 
-
-
-
-
-print(f'\n saída: {problem_output}\n')
+print(f'\nsaída: {problem_output}\n')
 
 ###
 
 sorted_list = sorted(problem_input, reverse=True)
-answer = sorted_list[:3]
+answer = set(sorted_list[:3])
 
-print(f'\n resposta: {answer}\n')
+print(f'\nresposta: {answer}\n')
 
 
 # Teste
