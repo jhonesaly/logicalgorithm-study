@@ -10,11 +10,18 @@ os.system('cls')
 problem_input1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 problem_input2 = 3
 
-print(f'\nentradas: {problem_input}\n')
+print(f'\nentradas: {problem_input1} , {problem_input2}\n')
+
 
 ###
 
-problem_output = 0
+problem_output = [range(problem_input2)]
+
+for i in range(problem_input2):
+    aux_1 = problem_input1.pop(-1)
+    problem_output[len(problem_output)-i] = aux_1
+
+problem_output.append(problem_input1)
 
 
 
