@@ -1,32 +1,35 @@
 import os
-import random
-
-## Criando lista de dados
-
-def gen_rand_list(list_range, lim_sup, lim_inf=0):
-    # modo alternativo: list = random.sample(range(list_range), list_size)    
-    
-    list = []
-    for num in range(list_range):
-        num = random.randint(lim_inf, lim_sup)
-        list.append(num)
-    return list
+from modules.gen_rand_list import *
 
 os.system('cls')
 
 # Criando o input: 
 
-problem_input = gen_rand_list(10, 99)
+problem_input = gen_rand_list(5, 99)
 
 print(f'\n entradas: {problem_input}\n')
 
 ###
 
+problem_output = problem_input[:3]
 
+for i in problem_input:
+    minimal = min(problem_output)
+    if i > minimal:
+        problem_output[minimal] = i
+
+#for i in problem_input:
+
+
+
+
+
+print(f'\n saída: {problem_output}\n')
 
 ###
 
-answer = sorted(problem_input)
+sorted_list = sorted(problem_input, reverse=True)
+answer = sorted_list[:3]
 
 print(f'\n resposta: {answer}\n')
 
