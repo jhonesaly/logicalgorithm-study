@@ -15,11 +15,12 @@ print(f'\nentradas: {problem_input1} , {problem_input2}\n')
 
 ###
 
-problem_output = [range(problem_input2)]
+problem_output = [0 for i in range(problem_input2)]
 
 for i in range(problem_input2):
     aux_1 = problem_input1.pop(-1)
-    problem_output[len(problem_output)-i] = aux_1
+    aux_2 = problem_input2 - i - 1
+    problem_output[aux_2] = aux_1
 
 problem_output.append(problem_input1)
 
