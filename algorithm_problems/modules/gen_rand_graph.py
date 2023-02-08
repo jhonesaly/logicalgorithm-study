@@ -33,14 +33,14 @@ print(weight_arest)
 
 # Desenha os vértices
 
-for i in range(len(vert)):
-    print(vert[i])
-    plt.scatter(vert[i])
+plt.scatter(x, y)
+
+#orig, dest = zip(*arest)
+
+# Desenha as arestas
+
+for orig, dest in arest:
+    plt.plot([x[orig], x[dest]], [y[orig], y[dest]], 'k-')
+
+# Mostra o gráfico
 plt.show()
-
-# # Desenha as arestas
-# for v1, v2 in todas_arestas:
-#     plt.plot([x[v1], x[v2]], [y[v1], y[v2]], 'k-')
-
-# # Mostra o gráfico
-# plt.show()
