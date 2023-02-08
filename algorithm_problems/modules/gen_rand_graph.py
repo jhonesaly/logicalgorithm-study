@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import itertools
 
 # Define os vértices
-x = [1, 2, 2, 3, 4, 4, 5]
-y = [2, 1, 3, 5, 1, 3, 2]
+x = [1, 2, 2, 3, 3, 4, 4, 5]
+y = [2, 1, 3, 5, -1, 1, 3, 2]
 
 vert = []
 
