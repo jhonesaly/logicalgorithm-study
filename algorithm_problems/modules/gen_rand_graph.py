@@ -14,13 +14,9 @@ vert = []
 for i in range(len(x)):
      vert.append((x[i],y[i]))
 
-print(vert)
-
 # Define todas as arestas
 
 arest = list(itertools.combinations(vert, 2))
-
-print(arest)
 
 # Define peso das arestas
 
@@ -28,17 +24,16 @@ weight_arest = []
 for i in range(len(arest)):
     weight_arest.append(random.randint(0,10))
 
-print(weight_arest)
-
-# Desenha os vértices
-
-plt.scatter(x, y)
-
-# Desenha as arestas
+# Desenha as arestas e os vértices
 
 for orig, dest in arest:
     plt.plot([orig[0], dest[0]], [orig[1], dest[1]], 'k-')
 
-# Mostra o gráfico
+plt.scatter(x, y)
 
+# Mostra informações e gráfico
+
+#print(vert)
+#print(arest)
+#print(weight_arest)
 plt.show()
