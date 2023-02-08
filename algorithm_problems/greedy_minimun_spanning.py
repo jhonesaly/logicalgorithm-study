@@ -18,8 +18,16 @@ print(v)
 todas_arestas = list(itertools.combinations(range(len(x)), 2))
 
 n = 6
-m = 6
-matriz_pesos = np.random.rand(n, m)
+matriz_pesos = 10*(np.random.rand(n, n))
+n = len(matriz_pesos)
+for i in range(n):
+    matriz_pesos[i, i] = 0
+n = len(matriz_pesos)
+for i in range(n-1, -1, -1):
+    matriz_pesos[i, i] = 0
+
+print(n)
+print(matriz_pesos)
 
 # Desenha os vértices
 plt.scatter(x, y)
