@@ -1,4 +1,3 @@
-import numpy as np
 import random
 import matplotlib.pyplot as plt
 import itertools
@@ -35,12 +34,11 @@ print(weight_arest)
 
 plt.scatter(x, y)
 
-#orig, dest = zip(*arest)
-
 # Desenha as arestas
 
 for orig, dest in arest:
-    plt.plot([x[orig], x[dest]], [y[orig], y[dest]], 'k-')
+    plt.plot([orig[0], dest[0]], [orig[1], dest[1]], 'k-')
 
 # Mostra o gráfico
+
 plt.show()

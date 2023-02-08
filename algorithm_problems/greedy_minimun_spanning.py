@@ -7,9 +7,9 @@ G = nx.Graph()
 G.add_nodes_from(range(len(x)))
 
 # Adiciona as arestas com seus pesos
-for i, (v1, v2) in enumerate(todas_arestas):
-    peso = matriz_pesos[v1][v2]
-    G.add_edge(v1, v2, weight=peso)
+for i, (orig, dest) in enumerate(todas_arestas):
+    peso = matriz_pesos[orig][dest]
+    G.add_edge(orig, dest, weight=peso)
 
 mst = nx.minimum_spanning_tree(G, weight='weight')
 
